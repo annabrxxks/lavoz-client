@@ -1,0 +1,160 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+    min-width: 200px;
+
+    @include mobile{
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logout {
+      position: absolute;
+      right: 10px;
+      justify-self: flex-end;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        padding: 2px 5px;
+      }
+    }
+    
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+          }
+
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .categoryLabel {
+          padding-left: 20px;
+          font-size: 12px;
+          
+        }
+
+        .subcategoryLabel {
+          padding-left: 40px;
+          font-size: 12px;
+          font-weight: lighter;
+        }
+        
+      }
+
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        span {
+          font-size: 14px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .categoryLabel {
+          padding-left: 20px;
+          font-size: 14px;
+        }
+
+        .subcategoryLabel {
+          padding-left: 40px;
+          font-size: 13px;
+          font-weight: lighter;
+        }
+        
+      }
+    }
+  }
+}

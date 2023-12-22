@@ -1,0 +1,211 @@
+@import "../../style.scss";
+
+.stories {
+    display: flex;
+    gap: 20px;
+    height: 300px;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 70vw;
+
+    
+    /* WebKit scrollbar styles */
+    &::-webkit-scrollbar {
+      height: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: block;
+      height: 25px;
+    }
+
+    &::-webkit-scrollbar-button:start {
+      /* Set your left arrow image */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M20 0H0v20h20zm-7.354 14.166-1.389 1.439-5.737-5.529 5.729-5.657 1.4 1.424-4.267 4.215z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+    }
+
+    &::-webkit-scrollbar-button:end {
+      /* Set your right arrow image */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M20 0H0v20h20zM7.658 15.707l-1.414-1.414L10.537 10 6.244 5.707l1.414-1.414L13.365 10z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+    }
+
+
+    .share {
+      @include themify($themes) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    
+        .wrapper {
+          overflow: auto;
+          margin: auto;
+          background-color: themed("bg");
+          min-height: 50%;
+          padding: 50px;
+          z-index: 999;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+          -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+          position: relative;
+
+          @include mobile {
+            width: 100%;
+            height: 100%;
+          }
+          
+          .post {
+            padding: 10px;
+            background-color: #6D1D1D;
+            color: white;
+            width: 70px;
+            border-radius: 10px;
+            font-size: 16px;
+            border: none;
+          }
+
+          .close {
+            padding: 4px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: red;
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            border-radius: 100px;
+          }
+
+          h2 {
+            font-weight: lighter;
+          }
+
+          .file {
+            width: 200px;
+            height: 350px;  
+            object-fit: cover;
+            border-radius: 20px;
+
+            @include mobile {
+              width: 50px;
+              height: 50px;
+            }
+          }
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            img {
+              height: 30px;
+            }
+
+            span {
+              font-size: 14px;
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+
+
+    @include mobile {
+      height: 50px;
+      margin-bottom: 0;
+      justify-content: space-between;
+    }
+
+    @include tablet{
+      height: 150px;
+      gap: 20px;
+    }
+
+    .story {
+      position: relative;
+
+      @include mobile {
+        flex: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+      }
+
+      img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      span {
+        position: absolute;
+        bottom: 45px;
+        left: 10px;
+        color: black;
+        background-color: #f6f3f3;
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-weight: 500;
+        @include mobile {
+          display: none;
+        }
+      }
+
+      button {
+        position: absolute;
+        bottom: 45px;
+        right: 10px;
+        color: white;
+        background-color: #6D1D1D;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        }
+      }
+
+      .lower {
+        bottom: 65px;
+      }
+    }
+}

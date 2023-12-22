@@ -1,0 +1,225 @@
+@import "../../style.scss";
+
+.market{
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+    .grid {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .categories {
+      margin: 20px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .section {
+      margin-top: 30px;
+    }
+
+    .background {
+      width: 100%;
+      background-color: #6D1D1D;
+      padding: 50px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text-container {
+        overflow: hidden;
+        white-space: nowrap;
+
+        .text-content {
+            display: inline-block;
+            // animation: scrollText 20s linear infinite;
+        }
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+          }
+      }
+
+      span {
+        color: white;
+        text-align: center;
+        font-style: italic;
+      }
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px themed("border") solid;
+        margin-bottom: 30px;
+        color: themed("border");
+        .tab {
+            background-color: transparent;
+            border:none;
+            padding: 20px;
+            color: themed("textColor");
+            width: 100%;
+            font-size: 17px;
+        }
+        .tab:hover {
+            background-color: themed("bg");
+        }
+        .selected {
+            color: #6D1D1D;
+            font-weight: bold;
+        }
+    }
+    .market-container {
+      padding: 10px 50px;
+    }
+    .centered {
+        display: flex;
+        justify-content: center;
+    }
+    .title {
+      font-weight: bold;
+      color: white;
+      font-size: 60px;
+      text-align: center;
+    }
+    .subtitle {
+      font-weight: bold;
+      font-size: 25px;
+      color: themed("textColor");
+    }
+    .feed {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 30px 0px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 500px));
+      align-items: flex-start;
+    }
+
+    .search {
+      background-color: white;
+      width: 50%;
+      }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: themed("textColor");
+
+        .files {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 50px;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .row {
+          display: flex;
+          align-items: center;
+          gap: 25px;
+        }
+
+        .description {
+          font-size: 13px;
+          color: themed("textColor");
+          margin-top: 5px;
+          margin-bottom: 10px;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          color: themed("textColor");
+          font-size: 14px;
+          font-weight: bold;
+          flex-basis: 20%;
+
+          .imgContainer {
+            position: relative;
+            img {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+            }
+
+            .icon {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+              font-size: 30px;
+              color: lightgray;
+              cursor: pointer;
+            }
+          }
+        }
+
+        input {
+          padding: 5px 0px;
+          border: none;
+          border-bottom: 1px solid themed("border");
+          color: themed("textColor");
+          background-color: transparent;
+          flex-basis: 60%;
+        }
+
+        button {
+          border: none;
+          padding: 10px;
+          margin-top: 10px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+          cursor: pointer;
+          color: white;
+          background-color: #6D1D1D;
+        }
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .smaller {
+      font-weight: lighter;
+      margin: 10px 0px;
+    }
+
+
+    .widget {
+      border-radius: 10px;
+      padding: 5px 10px;
+      background-color: #6D1D1D;
+      color: white;
+      border: 1px lightgray solid;
+      align-items: center;
+      display: flex;
+      gap: 10px;
+    }
+
+    .inactive {
+      background-color: themed("bg");
+      color: themed("textColor");
+    }
+  }
+ }

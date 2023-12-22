@@ -1,0 +1,123 @@
+@import "../../style.scss";
+
+.comments {
+  .react-input-emoji--button {
+    background-color: transparent;
+  }
+  @include themify($themes) {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .write{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 20px 0px;
+
+      button {
+        background-color: transparent;
+      }
+      
+      input{
+        flex:5;
+        padding: 10px;
+        border: 1px solid themed("border");
+        background-color: transparent;
+        color: themed("textColor");
+      }
+
+      .submit{
+        border: none;
+        background-color: #6D1D1D;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+    }
+
+    .comment {
+      margin: 30px 0px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      .comment-info {
+        flex:3;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+      
+        span {
+          font-weight: 500;
+        }
+
+        p{
+          color:themed("textColorSoft");
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          color: gray;
+        }
+      }
+      
+      .date{
+        flex:1;
+        justify-content: flex-end;
+        color: gray;
+        font-size: 12px;
+        display: flex;
+      }
+
+      .stars {
+        display: flex;
+        margin-top: 5px;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+      }
+
+      .emotion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+      }
+
+      .submit {
+        margin-left: 10px;
+        display: flex;
+      }
+
+      
+    }
+  }
+  
+  .floating {  
+    animation: createBox;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes createBox {
+    0% { transform: scale(1); translate: translate(0, 0px); }
+    50%  { transform: scale(2.25); 
+      translate: translate(0, 15px);
+    }
+    100%   { transform: scale(1); translate: translate(0, -0px); }    
+  }
+
+}

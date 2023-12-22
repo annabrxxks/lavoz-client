@@ -1,0 +1,51 @@
+@import "../../style.scss";
+
+.home{
+  @include themify($themes) {
+    padding: 20px 70px;
+    background-color: themed("bgSoft");
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet{
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 500px));
+      align-items: flex-start;
+    }
+    .categories {
+      padding-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .title {
+      margin: 35px 0px 20px 0px;
+      color: themed("textColor");
+      font-size: 25px;
+    }
+
+    .widget {
+      border-radius: 10px;
+      padding: 5px 10px;
+      background-color: #6D1D1D;
+      color: white;
+      border: 1px lightgray solid;
+      align-items: center;
+      display: flex;
+      gap: 10px;
+    }
+
+    .inactive {
+      background-color: themed("bg");
+      color: themed("textColor");
+    }
+  }
+ }
